@@ -228,9 +228,11 @@ Property Object Functions
    - :c:func:`obs_property_list_add_string`
    - :c:func:`obs_property_list_add_int`
    - :c:func:`obs_property_list_add_float`
+   - :c:func:`obs_property_list_add_bool`
    - :c:func:`obs_property_list_insert_string`
    - :c:func:`obs_property_list_insert_int`
    - :c:func:`obs_property_list_insert_float`
+   - :c:func:`obs_property_list_insert_bool`
    - :c:func:`obs_property_list_item_remove`
    - :c:func:`obs_property_list_clear`
 
@@ -745,6 +747,16 @@ Property Modification Functions
 
 ---------------------
 
+.. function:: size_t obs_property_list_add_bool(obs_property_t *p, const char *name, bool val)
+
+   Adds a boolean to a boolean list.
+
+   :param    name: Localized name shown to user
+   :param    val:  The actual bool value stored and will be returned by :c:func:`obs_data_get_bool`
+   :returns: The index of the list item.
+
+---------------------
+
 .. function:: void obs_property_list_insert_string(obs_property_t *p, size_t idx, const char *name, const char *val)
 
    Inserts a string in to a string list.
@@ -772,6 +784,16 @@ Property Modification Functions
    :param    idx:  The index of the list item.
    :param    name: Localized name shown to user
    :param    val:  The actual float value stored and will be returned by :c:func:`obs_data_get_double`
+
+---------------------
+
+.. function:: void obs_property_list_insert_bool(obs_property_t *p, size_t idx, const char *name, bool val)
+
+   Inserts a boolean in to a boolean list.
+
+   :param    idx:  The index of the list item.
+   :param    name: Localized name shown to user
+   :param    val:  The actual bool value stored and will be returned by :c:func:`obs_data_get_bool`
 
 ---------------------
 
